@@ -1,0 +1,310 @@
+:root {
+  --White: #fff;
+  --Background: #181719;
+  --SpacingTop: 46px;
+  --SpacingTopPhone: 25.5px;
+  --SpacingSidePhone: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--Background);
+  color: var(--White);
+}
+
+body {
+  max-width: 1287px;
+  margin: var(--SpacingTop) auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  width: 537px;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: var(--White);
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+header button {
+  font-family: "Crimson Pro", serif;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: var(--White);
+  background-color: transparent;
+  border: 1px solid var(--White);
+  padding: 8px;
+}
+
+.burger {
+  position: relative;
+  width: 28.5px;
+  height: 19px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 150;
+}
+
+.burger .slice {
+  width: 100%;
+  height: 2px;
+  background-color: var(--White);
+  transition: 0.5s;
+}
+
+.cross .slice {
+  position: absolute;
+}
+
+.cross .slice:nth-last-child(2) {
+  background-color: transparent;
+}
+
+.cross .slice:nth-last-child(1) {
+  transform: rotate(45deg);
+  top: 48%;
+}
+.cross .slice:nth-last-child(3) {
+  transform: rotate(135deg);
+  top: 48%;
+}
+
+.navActive {
+  transform: translate(0, 100vh);
+}
+
+#main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 147px;
+}
+
+#textWrapper {
+  max-width: 410px;
+}
+
+#textWrapper h1 {
+  font-family: "Lora", serif;
+  font-size: 48px;
+  line-height: 61px;
+}
+
+#textWrapper p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 40px 0 48px;
+}
+
+#textWrapper #textFooter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#textWrapper .readMore {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+#imgInterior {
+  max-width: 737px;
+}
+
+#photoWrapper {
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  bottom: -115px;
+  right: 30px;
+  max-width: 410px;
+  max-height: 189px;
+  padding-top: 23px;
+  padding-left: 26px;
+  background-color: #181719;
+}
+
+.card .cardHeader img {
+  float: left;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 19px;
+}
+
+.card .cardHeader h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.card .cardHeader p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #828282;
+  margin: 8px 0 30px;
+}
+
+.card .textCards {
+  max-width: 287px;
+  font-family: "Lora", serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+}
+
+footer {
+  margin-top: 217px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #a9a9a9;
+}
+
+@media (max-width: 1300px) {
+  body {
+    margin: var(--SpacingTopPhone) 20px;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #main {
+    flex-direction: column;
+  }
+
+  #imgInterior {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  body {
+    margin: var(--SpacingTopPhone) var(--SpacingSidePhone);
+  }
+
+  header {
+    align-items: inherit;
+  }
+
+  header nav {
+    display: flex;
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Background);
+    z-index: 100;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+  }
+
+  header ul {
+    flex-direction: column;
+    width: 100%;
+    height: 184px;
+    text-align: center;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  #main {
+    margin-top: 28px;
+  }
+
+  #textWrapper h1 {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  #textWrapper p {
+    max-width: 250px;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 25px 0 25px;
+  }
+
+  #textWrapper .readMore {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  #photoWrapper {
+    margin-top: 37px;
+  }
+
+  .card {
+    bottom: -70px;
+    right: 10px;
+    width: 300px;
+    height: 138px;
+    padding-top: 17px;
+    padding-left: 19px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .card .cardHeader h2 {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .card .cardHeader p {
+    font-size: 10px;
+    line-height: 12px;
+    margin: 6px 0 22px;
+  }
+
+  .card .textCards {
+    max-width: 210px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  footer {
+    font-size: 14px;
+    line-height: 17px;
+    padding: 10px 18px 0 18px;
+    border-top: 1px solid #a9a9a9;
+  }
+}
+@media (max-width: 362px) {
+  .card {
+    width: 285px;
+  }
+}
